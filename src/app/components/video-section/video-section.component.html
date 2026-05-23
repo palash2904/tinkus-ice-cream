@@ -1,4 +1,4 @@
-<section class="section section-alt" id="videos">
+<!-- <section class="section section-alt" id="videos">
   <div class="container">
     <div class="vid-header" appScrollReveal>
       <span class="section-tag">Watch &amp; Learn</span>
@@ -8,12 +8,9 @@
     <div class="vid-grid">
       <div class="vid-card" *ngFor="let v of videos; let i = index" appScrollReveal [revealDelay]="i * 120">
         <div class="vid-frame">
-          <iframe
-            [src]="safeUrl(v.youtubeId)"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <video controls preload="metadata" playsinline>
+            <source [src]="v.src" type="video/mp4">
+          </video>
         </div>
         <div class="vid-info">
           <h3>{{v.title}}</h3>
@@ -22,4 +19,4 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
