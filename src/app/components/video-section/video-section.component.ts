@@ -14,7 +14,7 @@ export class VideoSectionComponent {
     {
       title: 'How We Make Our Ice Cream',
       subtitle: 'A peek inside our factory',
-      src: '/assets/Ice_cream_vid.mp4',
+      src: '/assets/Ice_cream_vid_h264.mp4',
     },
   ];
 }
