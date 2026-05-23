@@ -10,10 +10,16 @@
         <span>Scroll the cravings</span>
         <h3>Flavours drift in like a freezer full of favourites.</h3>
       </div>
-      <div class="flavour-rail" aria-label="Featured flavours">
-        <div class="flavour-tile" *ngFor="let p of products.slice(0, 6)">
-          <span>{{p.emoji}}</span>
-          <strong>{{p.name}}</strong>
+      <div class="flavour-rail-wrap">
+        <div class="flavour-rail" aria-label="Featured flavours">
+          <div class="flavour-tile" *ngFor="let p of products.slice(0, 6)">
+            <span>{{p.emoji}}</span>
+            <strong>{{p.name}}</strong>
+          </div>
+          <div class="flavour-tile" *ngFor="let p of products.slice(0, 6)" aria-hidden="true">
+            <span>{{p.emoji}}</span>
+            <strong>{{p.name}}</strong>
+          </div>
         </div>
       </div>
     </div>
