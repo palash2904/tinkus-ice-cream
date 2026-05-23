@@ -1,0 +1,31 @@
+.section { background: var(--cream); }
+.loc-header { text-align: center; margin-bottom: 48px; }
+.loc-header .section-sub { margin: 0 auto; }
+.loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.retailers-title { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--text-dark); }
+.retailers-list { display: flex; flex-direction: column; gap: 12px; max-height: 480px; overflow-y: auto; padding-right: 8px; }
+.retailers-list::-webkit-scrollbar { width: 4px; }
+.retailers-list::-webkit-scrollbar-track { background: var(--border); border-radius: 2px; }
+.retailers-list::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 2px; }
+.retailer-card {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s;
+}
+.retailer-card:hover { box-shadow: var(--shadow-sm); }
+.retailer-icon { font-size: 24px; flex-shrink: 0; }
+.retailer-info { display: flex; flex-direction: column; gap: 2px; }
+.retailer-info strong { font-size: 15px; font-weight: 600; color: var(--text-dark); }
+.retailer-info > span { font-size: 13px; color: var(--text-mid); }
+.retailer-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+.retailer-meta span { font-size: 12px; color: var(--text-light); }
+.map-container { height: 480px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+@media (max-width: 900px) {
+  .loc-grid { grid-template-columns: 1fr; }
+  .map-container { height: 320px; }
+}

@@ -1,0 +1,36 @@
+<section class="section" id="locations">
+  <div class="container">
+    <div class="loc-header" appScrollReveal>
+      <span class="section-tag">Find Us</span>
+      <h2 class="section-title">Available Near You</h2>
+      <p class="section-sub">Find Tinku's Real Milk Ice Cream at these trusted retailers near you.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="retailers-list" appScrollReveal revealDirection="right">
+        <h3 class="retailers-title">Our Retailers</h3>
+        <div class="retailer-card" *ngFor="let r of retailers; let i = index" appScrollReveal [revealDelay]="i * 55">
+          <div class="retailer-icon">🏪</div>
+          <div class="retailer-info">
+            <strong>{{r.name}}</strong>
+            <span>{{r.area}}, {{r.city}}</span>
+            <div class="retailer-meta">
+              <span>📞 {{r.phone}}</span>
+              <span>🕐 {{r.timing}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-container" appScrollReveal revealDirection="left" [revealDelay]="140">
+        <iframe
+          [src]="mapUrl()"
+          width="100%"
+          height="100%"
+          style="border:0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="products-header" appScrollReveal>
+      <span class="section-tag">Our Flavours</span>
+      <h2 class="section-title">Crafted from Real Milk</h2>
+      <p class="section-sub">Every flavour starts with pure, farm-fresh milk. Pick your favourite or try them all.</p>
+    </div>
+    <div class="flavour-scroll-stage" appScrollReveal revealDirection="scale">
+      <div class="flavour-copy">
+        <span>Scroll the cravings</span>
+        <h3>Flavours drift in like a freezer full of favourites.</h3>
+      </div>
+      <div class="flavour-rail" aria-label="Featured flavours">
+        <div class="flavour-tile" *ngFor="let p of products.slice(0, 6)">
+          <span>{{p.emoji}}</span>
+          <strong>{{p.name}}</strong>
+        </div>
+      </div>
+    </div>
+    <div class="filters" appScrollReveal>
+      <button
+        *ngFor="let f of filters"
+        [class.active]="activeFilter() === f"
+        (click)="setFilter(f)"
+        class="filter-btn">
+        {{f}}
+      </button>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" *ngFor="let p of filtered; let i = index" appScrollReveal [revealDelay]="(i % 4) * 80">
+        <div class="product-badge" *ngIf="p.tag">{{p.tag}}</div>
+        <div class="product-emoji">{{p.emoji}}</div>
+        <div class="product-info">
+          <h3>{{p.name}}</h3>
+          <p>{{p.desc}}</p>
+        </div>
+        <div class="product-footer">
+          <span class="price">₹{{p.price}}</span>
+          <span class="category-tag">{{p.category}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

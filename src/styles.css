@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --brand: #D4003E;
+  --brand-light: #FF3366;
+  --brand-pale: #FFF0F4;
+  --cream: #FFF9F5;
+  --milk-white: #FFFFFF;
+  --text-dark: #1A1A1A;
+  --text-mid: #555555;
+  --text-light: #999999;
+  --gold: #C8922A;
+  --border: #EBEBEB;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-brand: 0 8px 32px rgba(212,0,62,0.18);
+  --radius: 16px;
+  --radius-sm: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--milk-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto;
+  height: 4px;
+  z-index: 10000;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--brand), var(--gold), var(--brand-light));
+  animation: scroll-progress linear both;
+  animation-timeline: scroll();
+}
+
+h1,h2,h3,h4 { font-family: var(--font-display); }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.section { padding: 80px 0; }
+.section {
+  position: relative;
+}
+.section-alt { background: var(--cream); }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+  background: var(--brand-pale);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--text-mid);
+  max-width: 560px;
+  line-height: 1.7;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 32px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: var(--shadow-brand);
+}
+.btn-primary:hover { background: var(--brand-light); transform: translateY(-2px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--brand);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 13px 30px;
+  border-radius: 100px;
+  border: 2px solid var(--brand);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.btn-outline:hover { background: var(--brand-pale); }
+
+.scroll-reveal {
+  opacity: 0;
+  filter: blur(10px);
+  transition:
+    opacity 0.8s cubic-bezier(.2,.7,.2,1),
+    filter 0.8s cubic-bezier(.2,.7,.2,1),
+    transform 0.8s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.reveal-up { transform: translate3d(0, 42px, 0); }
+.scroll-reveal.reveal-down { transform: translate3d(0, -42px, 0); }
+.scroll-reveal.reveal-left { transform: translate3d(52px, 0, 0); }
+.scroll-reveal.reveal-right { transform: translate3d(-52px, 0, 0); }
+.scroll-reveal.reveal-scale { transform: scale(0.92); }
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@keyframes scroll-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+}

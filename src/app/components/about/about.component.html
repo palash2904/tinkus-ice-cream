@@ -1,0 +1,45 @@
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" appScrollReveal revealDirection="right">
+        <div class="owner-card">
+          <div class="owner-img">👨‍🍳</div>
+          <div class="owner-info">
+            <h3>Tinku Sharma</h3>
+            <span>Founder &amp; Owner</span>
+          </div>
+        </div>
+        <div class="factory-preview">
+          <div class="factory-icon">🏭</div>
+          <div>
+            <strong>Our Factory</strong>
+            <p>Hygienic, modern, FSSAI-approved</p>
+          </div>
+        </div>
+        <div class="launch-badge">
+          <span class="launch-date">20 May 2025</span>
+          <span class="launch-label">Launch Date</span>
+        </div>
+      </div>
+      <div class="about-content" appScrollReveal revealDirection="left" [revealDelay]="140">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">Born from a Love of<br>Real Milk</h2>
+        <p class="about-para">
+          Growing up, Tinku Sharma watched his grandmother churn fresh malai kulfi every summer using milk straight from their family cow. That taste — rich, pure, and unforgettable — was something no commercial ice cream could replicate.
+        </p>
+        <p class="about-para">
+          On 20 May 2025, Tinku turned that childhood memory into a mission: to bring <strong>100% real milk ice cream</strong> back to people's lives. No shortcuts, no substitutes. Just pure milk, natural flavours, and honest ingredients.
+        </p>
+        <div class="about-points">
+          <div class="ap" *ngFor="let ap of aboutPoints; let i = index" appScrollReveal [revealDelay]="i * 90">
+            <div class="ap-icon">{{ap.icon}}</div>
+            <div>
+              <strong>{{ap.title}}</strong>
+              <p>{{ap.desc}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

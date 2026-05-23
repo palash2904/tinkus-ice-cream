@@ -1,0 +1,49 @@
+.section { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-visual { position: relative; }
+.owner-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 16px;
+}
+.owner-img { font-size: 56px; background: var(--brand-pale); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.owner-info h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--text-dark); }
+.owner-info span { font-size: 13px; color: var(--brand); font-weight: 500; }
+.factory-preview {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+.factory-icon { font-size: 36px; }
+.factory-preview strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.factory-preview p { font-size: 13px; color: var(--text-mid); margin: 0; }
+.launch-badge {
+  background: var(--brand);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.launch-date { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: #fff; }
+.launch-label { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 2px; }
+.about-para { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+.about-para strong { color: var(--text-dark); }
+.about-points { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.ap { display: flex; gap: 14px; align-items: flex-start; }
+.ap-icon { font-size: 24px; flex-shrink: 0; }
+.ap strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.ap p { font-size: 13px; color: var(--text-mid); margin: 0; }
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+}

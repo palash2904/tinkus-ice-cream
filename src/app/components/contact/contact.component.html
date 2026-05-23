@@ -1,0 +1,69 @@
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info" appScrollReveal revealDirection="right">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">We'd Love to<br>Hear From You</h2>
+        <p class="section-sub">For orders, retailer partnerships, or just to say hello — reach out!</p>
+        <div class="contact-details">
+          <div class="cd-item">
+            <span class="cd-icon">📧</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:hello@tinkusicecream.com">hellotinkusicecream.com</a>
+            </div>
+          </div>
+          <div class="cd-item">
+            <span class="cd-icon">📞</span>
+            <div>
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:+919999999999">+91 99999 99999</a>
+            </div>
+          </div>
+          <div class="cd-item">
+            <span class="cd-icon">📍</span>
+            <div>
+              <strong>Factory Address</strong>
+              <span>123 Dairy Lane, Indore, Madhya Pradesh 452001</span>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <a *ngFor="let s of socials" [href]="s.url" target="_blank" class="social-btn">
+              <span class="s-icon">{{s.icon}}</span>
+              <span class="s-name">{{s.name}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap" appScrollReveal revealDirection="left" [revealDelay]="140">
+        <div *ngIf="submitted()" class="success-msg">
+          🎉 Message sent! We'll get back to you within 24 hours.
+        </div>
+        <div *ngIf="!submitted()" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name *</label>
+              <input type="text" [(ngModel)]="formData.name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" [(ngModel)]="formData.email" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" [(ngModel)]="formData.subject" placeholder="Retailer enquiry, bulk order...">
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea [(ngModel)]="formData.message" rows="5" placeholder="How can we help you?"></textarea>
+          </div>
+          <button class="btn-primary" (click)="submit()">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

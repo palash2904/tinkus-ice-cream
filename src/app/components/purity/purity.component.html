@@ -1,0 +1,25 @@
+<section class="section" id="purity">
+  <div class="container">
+    <div class="purity-header" appScrollReveal>
+      <span class="section-tag">Our Promise</span>
+      <h2 class="section-title">Real Milk. Real Purity.</h2>
+      <p class="section-sub">Every scoop of Tinku's is made from farm-fresh, full-cream milk. No compromises, ever.</p>
+    </div>
+    <div class="purity-grid">
+      <div class="purity-card" *ngFor="let p of pillars; let i = index" appScrollReveal [revealDelay]="i * 70">
+        <div class="purity-icon">{{p.icon}}</div>
+        <h3>{{p.title}}</h3>
+        <p>{{p.desc}}</p>
+      </div>
+    </div>
+    <div class="milk-banner" appScrollReveal revealDirection="scale">
+      <div class="milk-banner-text">
+        <h3>FSSAI Certified &amp; Quality Assured</h3>
+        <p>FSSAI Lic. No: <strong>XXXXXXXXXXXX</strong> &nbsp;|&nbsp; Full-Cream Milk Fat: <strong>≥3.5%</strong> &nbsp;|&nbsp; SNF: <strong>≥8.5%</strong></p>
+      </div>
+      <div class="milk-badge">
+        <span class="badge-inner">✓ Pure Milk Certified</span>
+      </div>
+    </div>
+  </div>
+</section>

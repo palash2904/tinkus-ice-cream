@@ -1,0 +1,68 @@
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="established-badge" appScrollReveal revealDirection="down">
+        <span class="dot"></span> Est. 20 May 2025
+      </div>
+      <h1 class="hero-title" appScrollReveal [revealDelay]="90">
+        Pure Milk.<br>
+        <span class="accent">Pure Joy.</span>
+      </h1>
+      <p class="hero-tagline" appScrollReveal [revealDelay]="180">Real Milk Ice Cream</p>
+      <p class="hero-desc" appScrollReveal [revealDelay]="250">
+        Crafted with 100% farm-fresh pure milk, zero artificial flavours,
+        and zero preservatives. Every scoop is a promise of purity.
+      </p>
+      <div class="hero-actions" appScrollReveal [revealDelay]="320">
+        <button class="btn-primary" (click)="scrollTo('products')">
+          Explore Flavours &nbsp;→
+        </button>
+        <button class="btn-outline" (click)="scrollTo('about')">
+          Our Story
+        </button>
+      </div>
+      <div class="hero-stats" appScrollReveal [revealDelay]="390">
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Real Milk</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">0</span>
+          <span class="stat-label">Preservatives</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Flavours</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" appScrollReveal revealDirection="scale" [revealDelay]="180">
+      <div class="ice-cream-showcase">
+        <div class="ic-card ic-card1">
+          <span class="ic-emoji">🍓</span>
+          <span class="ic-name">Strawberry</span>
+        </div>
+        <div class="ic-card ic-card2">
+          <span class="ic-emoji">🥭</span>
+          <span class="ic-name">Alphonso Mango</span>
+        </div>
+        <div class="ic-card ic-card3">
+          <span class="ic-emoji">🍫</span>
+          <span class="ic-name">Chocolate Fudge</span>
+        </div>
+        <div class="hero-img-placeholder">
+          <div class="cone-graphic">🍦</div>
+          <div class="purity-ring">
+            <span>Pure Milk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
